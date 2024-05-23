@@ -41,7 +41,7 @@ class PermissionController extends Controller
     /**
      * Store a newly created permission in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
@@ -59,7 +59,7 @@ class PermissionController extends Controller
     /**
      * Display the specified permission.
      *
-     * @param  \Spatie\Permission\Models\Permission  $permission
+     * @param \Spatie\Permission\Models\Permission $permission
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function show(Permission $permission)
@@ -70,7 +70,7 @@ class PermissionController extends Controller
     /**
      * Show the form for editing the specified permission.
      *
-     * @param  \Spatie\Permission\Models\Permission  $permission
+     * @param \Spatie\Permission\Models\Permission $permission
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function edit(Permission $permission)
@@ -81,8 +81,8 @@ class PermissionController extends Controller
     /**
      * Update the specified permission in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Spatie\Permission\Models\Permission  $permission
+     * @param \Illuminate\Http\Request $request
+     * @param \Spatie\Permission\Models\Permission $permission
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Permission $permission)
@@ -100,12 +100,13 @@ class PermissionController extends Controller
     /**
      * Remove the specified permission from storage.
      *
-     * @param  \Spatie\Permission\Models\Permission  $permission
+     * @param \Spatie\Permission\Models\Permission $permission
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Permission $permission)
     {
         $permission->delete();
+
         return redirect()->route('permissions.index')->with('success', 'Permission deleted successfully.');
     }
 }
